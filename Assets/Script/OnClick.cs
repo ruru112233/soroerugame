@@ -37,13 +37,49 @@ public class OnClick : MonoBehaviour
 
     }
 
-    // 1行目の右側のボタン（行を左に動かす）
-    public void towRowRightButton()
+    // 2行目の右側のボタン（行を左に動かす）
+    public void twoRowRightButton()
     {
 
-        colorNum[0].Add(RandNum());
+        colorNum[1].Add(RandNum());
 
-        oneRow++;
+        twoRow++;
+
+        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+
+    }
+
+    // 3行目の右側のボタン（行を左に動かす）
+    public void threeRowRightButton()
+    {
+
+        colorNum[2].Add(RandNum());
+
+        threeRow++;
+
+        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+
+    }
+
+    // 4行目の右側のボタン（行を左に動かす）
+    public void fourRowRightButton()
+    {
+
+        colorNum[3].Add(RandNum());
+
+        fourRow++;
+
+        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+
+    }
+
+    // 5行目の右側のボタン（行を左に動かす）
+    public void fiveRowRightButton()
+    {
+
+        colorNum[4].Add(RandNum());
+
+        fiveRow++;
 
         ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
 
@@ -54,6 +90,46 @@ public class OnClick : MonoBehaviour
     {
 
         colorNum[0].Insert(0, RandNum());
+
+        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+
+    }
+
+    // 2行目の左側のボタン（行を右に動かす）
+    public void twoRowLeftButton()
+    {
+
+        colorNum[1].Insert(0, RandNum());
+
+        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+
+    }
+
+    // 3行目の左側のボタン（行を右に動かす）
+    public void threeRowLeftButton()
+    {
+
+        colorNum[2].Insert(0, RandNum());
+
+        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+
+    }
+
+    // 4行目の左側のボタン（行を右に動かす）
+    public void fourRowLeftButton()
+    {
+
+        colorNum[3].Insert(0, RandNum());
+
+        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+
+    }
+
+    // 5行目の左側のボタン（行を右に動かす）
+    public void fiveRowLeftButton()
+    {
+
+        colorNum[4].Insert(0, RandNum());
 
         ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
 
