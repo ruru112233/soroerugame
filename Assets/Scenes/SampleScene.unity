@@ -1360,6 +1360,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723364455}
   m_CullTransparentMesh: 1
+--- !u!1 &758586018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758586019}
+  - component: {fileID: 758586020}
+  m_Layer: 0
+  m_Name: ColorController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &758586019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758586018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 582.91724, y: 285.96472, z: -318.15854}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758586020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758586018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b86c4539e4a8f847bf4c528fad11409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelManager: {fileID: 1319039594}
 --- !u!1 &773035583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,6 +2419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1319039593}
+  - component: {fileID: 1319039594}
   m_Layer: 0
   m_Name: PanelManager
   m_TagString: Untagged
@@ -2396,6 +2441,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1319039594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319039592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4a43e78ca405d4cbb9aaf59640ccdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelImageList:
+  - {fileID: 1151250058}
+  - {fileID: 773035585}
+  - {fileID: 574450767}
+  - {fileID: 2146940793}
+  - {fileID: 72904567}
+  - {fileID: 587899671}
+  - {fileID: 471996977}
+  - {fileID: 2090000760}
+  - {fileID: 783274816}
+  - {fileID: 1939324833}
+  - {fileID: 2122828280}
+  - {fileID: 1915676954}
+  - {fileID: 2129637292}
+  - {fileID: 1313013080}
+  - {fileID: 1819916824}
+  - {fileID: 1907310513}
+  - {fileID: 1451530212}
+  - {fileID: 592272911}
+  - {fileID: 1499690461}
+  - {fileID: 884346811}
+  - {fileID: 2010257750}
+  - {fileID: 877343592}
+  - {fileID: 1651367116}
+  - {fileID: 1245589081}
+  - {fileID: 207277559}
 --- !u!1 &1399841170
 GameObject:
   m_ObjectHideFlags: 0
@@ -3885,7 +3968,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 3
 --- !u!222 &2057800560
 CanvasRenderer:
   m_ObjectHideFlags: 0
