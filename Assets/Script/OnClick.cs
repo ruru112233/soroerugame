@@ -16,6 +16,13 @@ public class OnClick : MonoBehaviour
     int fourRow = 0;
     int fiveRow = 0;
 
+    // 各列の初期位置を取得
+    int oneColume = 0;
+    int twoColume = 0;
+    int threeColume = 0;
+    int fourColume = 0;
+    int fiveColume = 0;
+
     public PanelManager panelManager;
 
     List<List<int>> colorNum;
@@ -33,7 +40,7 @@ public class OnClick : MonoBehaviour
 
         oneRow++;
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
@@ -45,7 +52,7 @@ public class OnClick : MonoBehaviour
 
         twoRow++;
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
@@ -57,7 +64,7 @@ public class OnClick : MonoBehaviour
 
         threeRow++;
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
@@ -69,7 +76,7 @@ public class OnClick : MonoBehaviour
 
         fourRow++;
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
@@ -81,7 +88,7 @@ public class OnClick : MonoBehaviour
 
         fiveRow++;
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
@@ -91,7 +98,7 @@ public class OnClick : MonoBehaviour
 
         colorNum[0].Insert(0, RandNum());
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
@@ -101,7 +108,7 @@ public class OnClick : MonoBehaviour
 
         colorNum[1].Insert(0, RandNum());
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
@@ -111,7 +118,7 @@ public class OnClick : MonoBehaviour
 
         colorNum[2].Insert(0, RandNum());
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
@@ -121,7 +128,7 @@ public class OnClick : MonoBehaviour
 
         colorNum[3].Insert(0, RandNum());
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
@@ -131,34 +138,71 @@ public class OnClick : MonoBehaviour
 
         colorNum[4].Insert(0, RandNum());
 
-        ChengePanelColor(colorNum, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        ChengePanelColor(colorNum);
 
     }
 
-    void ChengePanelColor(List<List<int>> colorNum, int oneRow, int twoRow, int threeRow, int fourRow, int fiveRow)
+    // 1行目の列の上のボタン（列を下に動かす）
+    public void OneColumnUpButton()
+    {
+        List<int> list = new List<int>() { RandNum(), RandNum(), RandNum(), RandNum(), RandNum() };
+
+        colorNum.Add(list);
+        oneColume++;
+
+        for (int i = colorNum.Count - 1; i > 0; i--) 
+        {
+            colorNum[i][0] = colorNum[i-1][0];
+        }
+
+        colorNum[0][0] = RandNum();
+
+        ChengePanelColumeColor(colorNum);
+
+    }
+
+    // 1行目の列の下のボタン（列を上に動かす）
+    public void OneColumnDownButton()
+    {
+        List<int> list = new List<int>() { RandNum(), 0, 0, 0, 0 };
+
+        colorNum.Insert(0,list);
+        oneColume++;
+
+        for (int i = 0; i < colorNum.Count - 1; i++)
+        {
+            colorNum[i][0] = colorNum[i + 1][0];
+        }
+
+        ChengePanelColumeColor(colorNum);
+
+    }
+
+
+    void ChengePanelColor(List<List<int>> colorNum)
     {
 
         int rowNum = 0;
         int elementCount = 0;
 
-        for (int y = 0; y < colorNum.Count; y++)
+        for (int y = 0; y < 5; y++)
         {
             switch (y)
             {
                 case 0:
-                    rowNum = oneRow;
+                    rowNum = this.oneRow;
                     break;
                 case 1:
-                    rowNum = twoRow;
+                    rowNum = this.twoRow;
                     break;
                 case 2:
-                    rowNum = threeRow;
+                    rowNum = this.threeRow;
                     break;
                 case 3:
-                    rowNum = fourRow;
+                    rowNum = this.fourRow;
                     break;
                 case 4:
-                    rowNum = fiveRow;
+                    rowNum = this.fiveRow;
                     break;
             }
 
@@ -177,7 +221,50 @@ public class OnClick : MonoBehaviour
 
     }
 
-    
+    void ChengePanelColumeColor(List<List<int>> colorNum)
+    {
+
+        int columeNum = 0;
+        int elementCount = 0;
+
+        int loopCount = 0;
+
+        for (int y = columeNum; y < columeNum + 5; y++)
+        {
+            switch (loopCount)
+            {
+                case 0:
+                    columeNum = this.oneColume;
+                    break;
+                case 1:
+                    columeNum = this.twoColume;
+                    break;
+                case 2:
+                    columeNum = this.threeColume;
+                    break;
+                case 3:
+                    columeNum = this.fourColume;
+                    break;
+                case 4:
+                    columeNum = this.fiveColume;
+                    break;
+            }
+
+            for (int x = 0; x < 5; x++)
+            {
+                Image image = panelManager.panelImageList[elementCount].GetComponent<Image>();
+
+                int colorNum1 = colorNum[y][x];
+
+                image.color = Util.selectColor(colorNum1);
+
+                elementCount++;
+            }
+
+            loopCount++;
+        }
+
+    }
 
     int RandNum()
     {
