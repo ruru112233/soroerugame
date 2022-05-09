@@ -4,10 +4,12 @@ using UnityEngine;
 using Controller;
 using UnityEngine.UI;
 using Panel;
+using System.Threading;
 
 public class OnClick : MonoBehaviour
 {
     public ColorController colorController;
+    public ScoreManager scoreManager;
 
     // 各行の初期位置を取得
     int oneRow = 0;
@@ -16,16 +18,13 @@ public class OnClick : MonoBehaviour
     int fourRow = 0;
     int fiveRow = 0;
 
-    // 各列の初期位置を取得
-    int oneColume = 0;
-    int twoColume = 0;
-    int threeColume = 0;
-    int fourColume = 0;
-    int fiveColume = 0;
+    int comboCount = 1;
 
     public PanelManager panelManager;
 
     List<List<int>> colorNum;
+
+    bool onClickFlag = true;
 
     private void Start()
     {
@@ -36,17 +35,21 @@ public class OnClick : MonoBehaviour
     public void oneRowRightButton()
     {
 
+        if (!onClickFlag) return;
+
         colorNum[0].Add(RandNum());
 
         oneRow++;
 
         ChengePanelColor(colorNum);
 
+        lineCheck();
     }
 
     // 2行目の右側のボタン（行を左に動かす）
     public void twoRowRightButton()
     {
+        if (!onClickFlag) return;
 
         colorNum[1].Add(RandNum());
 
@@ -54,11 +57,13 @@ public class OnClick : MonoBehaviour
 
         ChengePanelColor(colorNum);
 
+        lineCheck();
     }
 
     // 3行目の右側のボタン（行を左に動かす）
     public void threeRowRightButton()
     {
+        if (!onClickFlag) return;
 
         colorNum[2].Add(RandNum());
 
@@ -66,11 +71,13 @@ public class OnClick : MonoBehaviour
 
         ChengePanelColor(colorNum);
 
+        lineCheck();
     }
 
     // 4行目の右側のボタン（行を左に動かす）
     public void fourRowRightButton()
     {
+        if (!onClickFlag) return;
 
         colorNum[3].Add(RandNum());
 
@@ -78,11 +85,13 @@ public class OnClick : MonoBehaviour
 
         ChengePanelColor(colorNum);
 
+        lineCheck();
     }
 
     // 5行目の右側のボタン（行を左に動かす）
     public void fiveRowRightButton()
     {
+        if (!onClickFlag) return;
 
         colorNum[4].Add(RandNum());
 
@@ -90,94 +99,68 @@ public class OnClick : MonoBehaviour
 
         ChengePanelColor(colorNum);
 
+        lineCheck();
     }
 
     // 1行目の左側のボタン（行を右に動かす）
     public void oneRowLeftButton()
     {
+        if (!onClickFlag) return;
 
         colorNum[0].Insert(0, RandNum());
 
         ChengePanelColor(colorNum);
 
+        lineCheck();
     }
 
     // 2行目の左側のボタン（行を右に動かす）
     public void twoRowLeftButton()
     {
+        if (!onClickFlag) return;
 
         colorNum[1].Insert(0, RandNum());
 
         ChengePanelColor(colorNum);
 
+        lineCheck();
     }
 
     // 3行目の左側のボタン（行を右に動かす）
     public void threeRowLeftButton()
     {
+        if (!onClickFlag) return;
 
         colorNum[2].Insert(0, RandNum());
 
         ChengePanelColor(colorNum);
-
+        
+        lineCheck();
     }
 
     // 4行目の左側のボタン（行を右に動かす）
     public void fourRowLeftButton()
     {
+        if (!onClickFlag) return;
 
         colorNum[3].Insert(0, RandNum());
 
         ChengePanelColor(colorNum);
 
+        lineCheck();
     }
 
     // 5行目の左側のボタン（行を右に動かす）
     public void fiveRowLeftButton()
     {
+        if (!onClickFlag) return;
 
         colorNum[4].Insert(0, RandNum());
 
         ChengePanelColor(colorNum);
 
+        lineCheck();
     }
-
-    // 1行目の列の上のボタン（列を下に動かす）
-    public void OneColumnUpButton()
-    {
-        List<int> list = new List<int>() { RandNum(), RandNum(), RandNum(), RandNum(), RandNum() };
-
-        colorNum.Add(list);
-        oneColume++;
-
-        for (int i = colorNum.Count - 1; i > 0; i--) 
-        {
-            colorNum[i][0] = colorNum[i-1][0];
-        }
-
-        colorNum[0][0] = RandNum();
-
-        ChengePanelColumeColor(colorNum);
-
-    }
-
-    // 1行目の列の下のボタン（列を上に動かす）
-    public void OneColumnDownButton()
-    {
-        List<int> list = new List<int>() { RandNum(), 0, 0, 0, 0 };
-
-        colorNum.Insert(0,list);
-        oneColume++;
-
-        for (int i = 0; i < colorNum.Count - 1; i++)
-        {
-            colorNum[i][0] = colorNum[i + 1][0];
-        }
-
-        ChengePanelColumeColor(colorNum);
-
-    }
-
 
     void ChengePanelColor(List<List<int>> colorNum)
     {
@@ -221,55 +204,163 @@ public class OnClick : MonoBehaviour
 
     }
 
-    void ChengePanelColumeColor(List<List<int>> colorNum)
-    {
-
-        int columeNum = 0;
-        int elementCount = 0;
-
-        int loopCount = 0;
-
-        for (int y = columeNum; y < columeNum + 5; y++)
-        {
-            switch (loopCount)
-            {
-                case 0:
-                    columeNum = this.oneColume;
-                    break;
-                case 1:
-                    columeNum = this.twoColume;
-                    break;
-                case 2:
-                    columeNum = this.threeColume;
-                    break;
-                case 3:
-                    columeNum = this.fourColume;
-                    break;
-                case 4:
-                    columeNum = this.fiveColume;
-                    break;
-            }
-
-            for (int x = 0; x < 5; x++)
-            {
-                Image image = panelManager.panelImageList[elementCount].GetComponent<Image>();
-
-                int colorNum1 = colorNum[y][x];
-
-                image.color = Util.selectColor(colorNum1);
-
-                elementCount++;
-            }
-
-            loopCount++;
-        }
-
-    }
-
     int RandNum()
     {
         int randNum = Random.Range(1, 6);
 
         return randNum;
     }
+
+    void lineCheck()
+    {
+        bool line1 = Util.CheckAlign(colorNum, 1, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        bool line2 = Util.CheckAlign(colorNum, 2, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        bool line3 = Util.CheckAlign(colorNum, 3, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        bool line4 = Util.CheckAlign(colorNum, 4, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        bool line5 = Util.CheckAlign(colorNum, 5, oneRow, twoRow, threeRow, fourRow, fiveRow);
+
+        if (line1)
+        {
+            StartCoroutine(LineClear(colorNum, 1));
+        }
+
+        if (line2)
+        {
+            StartCoroutine(LineClear(colorNum, 2));
+        }
+
+        if (line3)
+        {
+            StartCoroutine(LineClear(colorNum, 3));
+        }
+
+        if (line4)
+        {
+            StartCoroutine(LineClear(colorNum, 4));
+        }
+
+        if (line5)
+        {
+            StartCoroutine(LineClear(colorNum, 5));
+        }
+
+        int matchCounter = LineMatchCount(line1, line2, line3, line4, line5);
+
+        if(matchCounter != 0)
+        {
+            scoreManager.ScoreCount(ComboCount(matchCounter), matchCounter);
+        }
+    }
+
+    IEnumerator LineClear(List<List<int>> colorNum, 
+                   int lineNum)
+    {
+
+        onClickFlag = false;
+
+        int xNum = 0;
+        int n = 0;
+
+        for (int y = 0; y < 5; y++)
+        {
+
+            switch (y)
+            {
+                case 0:
+                    n = this.oneRow;
+                    break;
+                case 1:
+                    n = this.twoRow;
+                    break;
+                case 2:
+                    n = this.threeRow;
+                    break;
+                case 3:
+                    n = this.fourRow;
+                    break;
+                case 4:
+                    n = this.fiveRow;
+                    break;
+            }
+
+            xNum = lineNum - 1 + n;
+
+            colorNum[y][xNum] = 0;
+
+        }
+
+        ChengePanelColor(colorNum);
+
+        yield return new WaitForSeconds(0.5f);
+
+        for (int y = 0; y < 5; y++)
+        {
+
+            switch (y)
+            {
+                case 0:
+                    n = this.oneRow;
+                    break;
+                case 1:
+                    n = this.twoRow;
+                    break;
+                case 2:
+                    n = this.threeRow;
+                    break;
+                case 3:
+                    n = this.fourRow;
+                    break;
+                case 4:
+                    n = this.fiveRow;
+                    break;
+            }
+
+            xNum = lineNum - 1 + n;
+
+            colorNum[y][xNum] = RandNum();
+
+        }
+
+        ChengePanelColor(colorNum);
+
+        onClickFlag = true;
+    }
+
+
+    int LineMatchCount(bool line1,
+                       bool line2,
+                       bool line3,
+                       bool line4,
+                       bool line5)
+    {
+        int counter = 0;
+
+        if (line1) counter++;
+
+        if (line2) counter++;
+
+        if (line3) counter++;
+
+        if (line4) counter++;
+
+        if (line5) counter++;
+
+        return counter;
+    }
+
+    int ComboCount(int lineCount)
+    {
+        if (lineCount == 1)
+        {
+            comboCount = 1;
+        }
+        else
+        {
+            comboCount++;
+        }
+
+
+        return comboCount;
+    }
+
 }
