@@ -10,6 +10,10 @@ public class OnClick : MonoBehaviour
 {
     public ColorController colorController;
     public ScoreManager scoreManager;
+    public ComboManager comboManager;
+
+    // 削除したLINEの数を表示
+    public Text deleteLineText;
 
     // 各行の初期位置を取得
     int oneRow = 0;
@@ -17,8 +21,6 @@ public class OnClick : MonoBehaviour
     int threeRow = 0;
     int fourRow = 0;
     int fiveRow = 0;
-
-    int comboCount = 1;
 
     public PanelManager panelManager;
 
@@ -248,8 +250,24 @@ public class OnClick : MonoBehaviour
 
         if(matchCounter != 0)
         {
-            scoreManager.ScoreCount(ComboCount(matchCounter), matchCounter);
+            // 消したLINE数を表示
+            int delLineCount = LineMatchCount(line1, line2, line3, line4, line5);
+
+            StartCoroutine(DelLineTextUpdate(delLineCount));
+
+            // スコアのカウント
+            scoreManager.ScoreCount(comboManager.ComboCount(matchCounter), matchCounter);
+
         }
+    }
+
+    IEnumerator DelLineTextUpdate(int delLineCount)
+    {
+        deleteLineText.text = delLineCount.ToString() + "つ消し";
+
+        yield return new WaitForSeconds(1.5f);
+
+        deleteLineText.text = "";
     }
 
     IEnumerator LineClear(List<List<int>> colorNum, 
@@ -348,19 +366,5 @@ public class OnClick : MonoBehaviour
         return counter;
     }
 
-    int ComboCount(int lineCount)
-    {
-        if (lineCount == 1)
-        {
-            comboCount = 1;
-        }
-        else
-        {
-            comboCount++;
-        }
-
-
-        return comboCount;
-    }
 
 }
