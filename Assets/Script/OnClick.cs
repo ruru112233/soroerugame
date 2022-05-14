@@ -11,16 +11,13 @@ public class OnClick : MonoBehaviour
     public ColorController colorController;
     public ScoreManager scoreManager;
     public ComboManager comboManager;
+    public LineCheckManager lineCheckManager;
+
+    public GameManager gameManager;
 
     // 削除したLINEの数を表示
     public Text deleteLineText;
 
-    // 各行の初期位置を取得
-    int oneRow = 0;
-    int twoRow = 0;
-    int threeRow = 0;
-    int fourRow = 0;
-    int fiveRow = 0;
 
     public PanelManager panelManager;
 
@@ -31,6 +28,7 @@ public class OnClick : MonoBehaviour
     private void Start()
     {
         colorNum = colorController.InitColorNum;
+        gameManager = GameManager.instance;
     }
 
     // 1行目の右側のボタン（行を左に動かす）
@@ -39,9 +37,9 @@ public class OnClick : MonoBehaviour
 
         if (!onClickFlag) return;
 
-        colorNum[0].Add(RandNum());
+        colorNum[0].Add(Util.RandNum());
 
-        oneRow++;
+        gameManager.OneRow++;
 
         ChengePanelColor(colorNum);
 
@@ -53,9 +51,9 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
-        colorNum[1].Add(RandNum());
+        colorNum[1].Add(Util.RandNum());
 
-        twoRow++;
+        gameManager.TwoRow++;
 
         ChengePanelColor(colorNum);
 
@@ -67,9 +65,9 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
-        colorNum[2].Add(RandNum());
+        colorNum[2].Add(Util.RandNum());
 
-        threeRow++;
+        gameManager.ThreeRow++;
 
         ChengePanelColor(colorNum);
 
@@ -81,9 +79,9 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
-        colorNum[3].Add(RandNum());
+        colorNum[3].Add(Util.RandNum());
 
-        fourRow++;
+        gameManager.FourRow++;
 
         ChengePanelColor(colorNum);
 
@@ -95,9 +93,9 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
-        colorNum[4].Add(RandNum());
+        colorNum[4].Add(Util.RandNum());
 
-        fiveRow++;
+        gameManager.FiveRow++;
 
         ChengePanelColor(colorNum);
 
@@ -109,7 +107,7 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
-        colorNum[0].Insert(0, RandNum());
+        colorNum[0].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
 
@@ -121,7 +119,7 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
-        colorNum[1].Insert(0, RandNum());
+        colorNum[1].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
 
@@ -133,7 +131,7 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
-        colorNum[2].Insert(0, RandNum());
+        colorNum[2].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
         
@@ -145,7 +143,7 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
-        colorNum[3].Insert(0, RandNum());
+        colorNum[3].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
 
@@ -157,7 +155,7 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
-        colorNum[4].Insert(0, RandNum());
+        colorNum[4].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
 
@@ -175,19 +173,19 @@ public class OnClick : MonoBehaviour
             switch (y)
             {
                 case 0:
-                    rowNum = this.oneRow;
+                    rowNum = gameManager.OneRow;
                     break;
                 case 1:
-                    rowNum = this.twoRow;
+                    rowNum = gameManager.TwoRow;
                     break;
                 case 2:
-                    rowNum = this.threeRow;
+                    rowNum = gameManager.ThreeRow;
                     break;
                 case 3:
-                    rowNum = this.fourRow;
+                    rowNum = gameManager.FourRow;
                     break;
                 case 4:
-                    rowNum = this.fiveRow;
+                    rowNum = gameManager.FiveRow;
                     break;
             }
 
@@ -206,20 +204,15 @@ public class OnClick : MonoBehaviour
 
     }
 
-    int RandNum()
-    {
-        int randNum = Random.Range(1, 6);
-
-        return randNum;
-    }
+    
 
     void lineCheck()
     {
-        bool line1 = Util.CheckAlign(colorNum, 1, oneRow, twoRow, threeRow, fourRow, fiveRow);
-        bool line2 = Util.CheckAlign(colorNum, 2, oneRow, twoRow, threeRow, fourRow, fiveRow);
-        bool line3 = Util.CheckAlign(colorNum, 3, oneRow, twoRow, threeRow, fourRow, fiveRow);
-        bool line4 = Util.CheckAlign(colorNum, 4, oneRow, twoRow, threeRow, fourRow, fiveRow);
-        bool line5 = Util.CheckAlign(colorNum, 5, oneRow, twoRow, threeRow, fourRow, fiveRow);
+        bool line1 = Util.CheckAlign(colorNum, 1, gameManager.OneRow, gameManager.TwoRow, gameManager.ThreeRow, gameManager.FourRow, gameManager.FiveRow);
+        bool line2 = Util.CheckAlign(colorNum, 2, gameManager.OneRow, gameManager.TwoRow, gameManager.ThreeRow, gameManager.FourRow, gameManager.FiveRow);
+        bool line3 = Util.CheckAlign(colorNum, 3, gameManager.OneRow, gameManager.TwoRow, gameManager.ThreeRow, gameManager.FourRow, gameManager.FiveRow);
+        bool line4 = Util.CheckAlign(colorNum, 4, gameManager.OneRow, gameManager.TwoRow, gameManager.ThreeRow, gameManager.FourRow, gameManager.FiveRow);
+        bool line5 = Util.CheckAlign(colorNum, 5, gameManager.OneRow, gameManager.TwoRow, gameManager.ThreeRow, gameManager.FourRow, gameManager.FiveRow);
 
         if (line1)
         {
@@ -263,9 +256,9 @@ public class OnClick : MonoBehaviour
 
     IEnumerator DelLineTextUpdate(int delLineCount)
     {
-        deleteLineText.text = delLineCount.ToString() + "つ消し";
+        deleteLineText.text = delLineCount.ToString() + "けし";
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
 
         deleteLineText.text = "";
     }
@@ -274,10 +267,14 @@ public class OnClick : MonoBehaviour
                    int lineNum)
     {
 
+        lineCheckManager.DelLine++;
+
         onClickFlag = false;
 
         int xNum = 0;
         int n = 0;
+
+        bool colorCheck = true;
 
         for (int y = 0; y < 5; y++)
         {
@@ -285,19 +282,19 @@ public class OnClick : MonoBehaviour
             switch (y)
             {
                 case 0:
-                    n = this.oneRow;
+                    n = gameManager.OneRow;
                     break;
                 case 1:
-                    n = this.twoRow;
+                    n = gameManager.TwoRow;
                     break;
                 case 2:
-                    n = this.threeRow;
+                    n = gameManager.ThreeRow;
                     break;
                 case 3:
-                    n = this.fourRow;
+                    n = gameManager.FourRow;
                     break;
                 case 4:
-                    n = this.fiveRow;
+                    n = gameManager.FiveRow;
                     break;
             }
 
@@ -311,31 +308,43 @@ public class OnClick : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        for (int y = 0; y < 5; y++)
+        while (colorCheck)
         {
-
-            switch (y)
+            for (int y = 0; y < 5; y++)
             {
-                case 0:
-                    n = this.oneRow;
-                    break;
-                case 1:
-                    n = this.twoRow;
-                    break;
-                case 2:
-                    n = this.threeRow;
-                    break;
-                case 3:
-                    n = this.fourRow;
-                    break;
-                case 4:
-                    n = this.fiveRow;
-                    break;
+
+                switch (y)
+                {
+                    case 0:
+                        n = gameManager.OneRow;
+                        break;
+                    case 1:
+                        n = gameManager.TwoRow;
+                        break;
+                    case 2:
+                        n = gameManager.ThreeRow;
+                        break;
+                    case 3:
+                        n = gameManager.FourRow;
+                        break;
+                    case 4:
+                        n = gameManager.FiveRow;
+                        break;
+                }
+
+                xNum = lineNum - 1 + n;
+
+                colorNum[y][xNum] = Util.RandNum();
+
             }
 
-            xNum = lineNum - 1 + n;
-
-            colorNum[y][xNum] = RandNum();
+            colorCheck = Util.CheckAlign(colorNum,
+                               lineNum,
+                               gameManager.OneRow,
+                               gameManager.TwoRow,
+                               gameManager.ThreeRow,
+                               gameManager.FourRow,
+                               gameManager.FiveRow);
 
         }
 
