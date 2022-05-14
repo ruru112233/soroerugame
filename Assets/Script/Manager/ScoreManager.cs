@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
 
     int scorePoint = 0;
 
+    public int ScorePoint => scorePoint;
+
     // Start is called before the first frame update
     void Start()
     {

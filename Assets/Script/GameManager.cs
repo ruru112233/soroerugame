@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public ScoreManager scoreManager;
+    public TimerManager timerManager;
 
     // Šes‚Ì‰ŠúˆÊ’u‚ğæ“¾
     int oneRow = 0;
