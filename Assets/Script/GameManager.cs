@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        AudioManager.instance.PlayBGM(0);
+    }
+
     public bool AllColorLineCheck(List<List<int>> colorNum)
     {
         bool line1 = Util.CheckAlign(colorNum, 1, oneRow, twoRow, threeRow, fourRow, fiveRow);

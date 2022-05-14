@@ -18,8 +18,6 @@ public class TextMove : MonoBehaviour
         float x = transform.position.x - speed * Time.deltaTime;
         float y = transform.position.y + speed * Time.deltaTime;
 
-        Debug.Log("x:" + x + "y:" + y);
-
         if (x < -1000f || y < 2000f)
         {
             transform.position = new Vector3(x , y , 0);

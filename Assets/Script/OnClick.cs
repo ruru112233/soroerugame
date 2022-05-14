@@ -27,7 +27,7 @@ public class OnClick : MonoBehaviour
 
     private void Start()
     {
-        colorNum = colorController.InitColorNum;
+        if(colorController) colorNum = colorController.InitColorNum;
         gameManager = GameManager.instance;
     }
 
@@ -36,6 +36,8 @@ public class OnClick : MonoBehaviour
     {
 
         if (!onClickFlag) return;
+
+        ButtonClick();
 
         colorNum[0].Add(Util.RandNum());
 
@@ -51,6 +53,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[1].Add(Util.RandNum());
 
         gameManager.TwoRow++;
@@ -64,6 +68,8 @@ public class OnClick : MonoBehaviour
     public void threeRowRightButton()
     {
         if (!onClickFlag) return;
+        
+        ButtonClick();
 
         colorNum[2].Add(Util.RandNum());
 
@@ -79,6 +85,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[3].Add(Util.RandNum());
 
         gameManager.FourRow++;
@@ -92,6 +100,8 @@ public class OnClick : MonoBehaviour
     public void fiveRowRightButton()
     {
         if (!onClickFlag) return;
+
+        ButtonClick();
 
         colorNum[4].Add(Util.RandNum());
 
@@ -107,6 +117,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[0].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
@@ -118,6 +130,8 @@ public class OnClick : MonoBehaviour
     public void twoRowLeftButton()
     {
         if (!onClickFlag) return;
+
+        ButtonClick();
 
         colorNum[1].Insert(0, Util.RandNum());
 
@@ -131,6 +145,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[2].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
@@ -143,6 +159,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[3].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
@@ -154,6 +172,8 @@ public class OnClick : MonoBehaviour
     public void fiveRowLeftButton()
     {
         if (!onClickFlag) return;
+
+        ButtonClick();
 
         colorNum[4].Insert(0, Util.RandNum());
 
@@ -204,7 +224,10 @@ public class OnClick : MonoBehaviour
 
     }
 
-    
+    void ButtonClick()
+    {
+        AudioManager.instance.PlaySE(0);
+    }
 
     void lineCheck()
     {
@@ -266,6 +289,7 @@ public class OnClick : MonoBehaviour
     IEnumerator LineClear(List<List<int>> colorNum, 
                    int lineNum)
     {
+        AudioManager.instance.PlaySE(2);
 
         lineCheckManager.DelLine++;
 

@@ -32,6 +32,8 @@ public class LineCheckManager : MonoBehaviour
             delLine = 0;
             GameManager.instance.timerManager.TimeCount += 3.0f;
 
+            AudioManager.instance.PlaySE(1);
+
             StartCoroutine(CountUpTextUpdate());
         }
 
