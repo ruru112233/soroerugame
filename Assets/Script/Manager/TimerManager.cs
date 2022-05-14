@@ -9,6 +9,12 @@ public class TimerManager : MonoBehaviour
 
     float timeCount = 60.0f;
 
+    public float TimeCount
+    {
+        get => timeCount;
+        set => timeCount = value;
+    }
+
     private void Start()
     {
         timerText.text = timeCount.ToString();

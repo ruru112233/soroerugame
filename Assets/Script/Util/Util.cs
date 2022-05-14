@@ -12,7 +12,7 @@ public class Util : MonoBehaviour
         
         if (colorNum == 1)
         {
-            color = Color.red;
+            color = Color.blue;
         }
         else if (colorNum == 2)
         {
@@ -24,7 +24,7 @@ public class Util : MonoBehaviour
         }
         else if (colorNum == 4)
         {
-            color = Color.blue;
+            color = Color.red;
         }
         else if (colorNum == 5)
         {
@@ -32,7 +32,7 @@ public class Util : MonoBehaviour
         }
         else
         {
-            color = Color.white;
+            color = new Color(0,0,0,0);
         }
 
         return color;
@@ -87,5 +87,13 @@ public class Util : MonoBehaviour
         }
 
         return true;
+    }
+
+
+    public static int RandNum()
+    {
+        int randNum = Random.Range(1, 4);
+
+        return randNum;
     }
 }
