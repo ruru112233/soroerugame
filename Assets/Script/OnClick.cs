@@ -5,6 +5,7 @@ using Controller;
 using UnityEngine.UI;
 using Panel;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class OnClick : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class OnClick : MonoBehaviour
     public ComboManager comboManager;
     public LineCheckManager lineCheckManager;
 
-    public GameManager gameManager;
+    private GameManager gameManager;
 
     // 削除したLINEの数を表示
     public Text deleteLineText;
@@ -29,6 +30,21 @@ public class OnClick : MonoBehaviour
     {
         if(colorController) colorNum = colorController.InitColorNum;
         gameManager = GameManager.instance;
+    }
+
+    // リトライボタン
+    public void ReTryButton()
+    {
+        AudioManager.instance.PlaySE(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
+    // タイトル画面に戻る
+    public void TitleButton()
+    {
+        AudioManager.instance.PlaySE(0);
+        SceneManager.LoadScene("TitleScene");
     }
 
     // 1行目の右側のボタン（行を左に動かす）

@@ -33,6 +33,8 @@ public class TimerManager : MonoBehaviour
             // ƒ‰ƒ“ƒLƒ“ƒO‚Ì•\Ž¦
             if (!rankingViewFlag)
             {
+                AudioManager.instance.PlaySE(3);
+                GameManager.instance.gameOverPanel.SetActive(true);
                 rankingViewFlag = true;
                 naichilab.RankingLoader.Instance.SendScoreAndShowRanking(GameManager.instance.scoreManager.ScorePoint);
             }

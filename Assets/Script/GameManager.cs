@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public ScoreManager scoreManager;
     public TimerManager timerManager;
 
+    public GameObject gameOverPanel;
+
     // Šes‚Ì‰ŠúˆÊ’u‚ğæ“¾
     int oneRow = 0;
     int twoRow = 0;
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         AudioManager.instance.PlayBGM(0);
+
+        gameOverPanel.SetActive(false);
     }
 
     public bool AllColorLineCheck(List<List<int>> colorNum)
