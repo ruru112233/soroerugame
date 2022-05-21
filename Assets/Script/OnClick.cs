@@ -47,6 +47,13 @@ public class OnClick : MonoBehaviour
         SceneManager.LoadScene("TitleScene");
     }
 
+    // スタッフロール画面に遷移
+    public void StaffRollButton()
+    {
+        AudioManager.instance.PlaySE(0);
+        SceneManager.LoadScene("StuffRoll");
+    }
+
     // 1行目の右側のボタン（行を左に動かす）
     public void oneRowRightButton()
     {

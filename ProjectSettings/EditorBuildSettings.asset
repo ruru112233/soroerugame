@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/naichilab/unity-simple-ranking/Scenes/Ranking.unity
     guid: 152244f5855414ac4a3874f14efa583c
+  - enabled: 1
+    path: Assets/Scenes/StuffRoll.unity
+    guid: e46f04eaf893dd94abd22b5bb152e743
   m_configObjects: {}
