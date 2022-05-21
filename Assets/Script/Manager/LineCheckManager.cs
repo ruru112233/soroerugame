@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LineCheckManager : MonoBehaviour
 {
     public Slider slider;
-    public TimerManager timerManager;
+    public Text countUpText;
 
     private int delLine = 0;
 
@@ -21,6 +21,7 @@ public class LineCheckManager : MonoBehaviour
     {
         slider.maxValue = 5;
         slider.value = delLine;
+        countUpText.text = "";
     }
 
     // Update is called once per frame
@@ -29,9 +30,22 @@ public class LineCheckManager : MonoBehaviour
         if (delLine == 5)
         {
             delLine = 0;
-            timerManager.TimeCount += 3.0f;
+            GameManager.instance.timerManager.TimeCount += 3.0f;
+
+            AudioManager.instance.PlaySE(1);
+
+            StartCoroutine(CountUpTextUpdate());
         }
 
         slider.value = delLine;
+    }
+
+    IEnumerator CountUpTextUpdate()
+    {
+        countUpText.text = "+3•b";
+
+        yield return new WaitForSeconds(0.5f);
+
+        countUpText.text = "";
     }
 }

@@ -13,18 +13,6 @@ namespace Controller
 
         public GameManager gameManager;
 
-        //private int[,] initColorNum = new int[,] { { 0, 0, 0, 0, 0 }, 
-        //                                           { 0, 0, 0, 0, 0 },
-        //                                           { 0, 0, 0, 0, 0 },
-        //                                           { 0, 0, 0, 0, 0 },
-        //                                           { 0, 0, 0, 0, 0 }};
-
-        //private int[,] initColorNum = new int[,] { { 1, 2, 3, 4, 5 },
-        //                                           { 3, 2, 3, 3, 5 },
-        //                                           { 1, 5, 2, 4, 4 },
-        //                                           { 1, 5, 1, 1, 1 },
-        //                                           { 5, 4, 5, 2, 4 }};
-
         private List<List<int>> initColorNum = new List<List<int>>();
 
         List<int> list1 = new List<int>() { 0, 0, 0, 0, 0 };

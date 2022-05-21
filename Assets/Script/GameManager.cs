@@ -5,6 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public ScoreManager scoreManager;
+    public TimerManager timerManager;
+
+    public GameObject gameOverPanel;
 
     // Šes‚Ì‰ŠúˆÊ’u‚ğæ“¾
     int oneRow = 0;
@@ -29,6 +33,13 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Start()
+    {
+        AudioManager.instance.PlayBGM(0);
+
+        gameOverPanel.SetActive(false);
     }
 
     public bool AllColorLineCheck(List<List<int>> colorNum)

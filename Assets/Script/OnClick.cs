@@ -5,6 +5,7 @@ using Controller;
 using UnityEngine.UI;
 using Panel;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class OnClick : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class OnClick : MonoBehaviour
     public ComboManager comboManager;
     public LineCheckManager lineCheckManager;
 
-    public GameManager gameManager;
+    private GameManager gameManager;
 
     // 削除したLINEの数を表示
     public Text deleteLineText;
@@ -27,8 +28,30 @@ public class OnClick : MonoBehaviour
 
     private void Start()
     {
-        colorNum = colorController.InitColorNum;
+        if(colorController) colorNum = colorController.InitColorNum;
         gameManager = GameManager.instance;
+    }
+
+    // リトライボタン
+    public void ReTryButton()
+    {
+        AudioManager.instance.PlaySE(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
+    // タイトル画面に戻る
+    public void TitleButton()
+    {
+        AudioManager.instance.PlaySE(0);
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    // スタッフロール画面に遷移
+    public void StaffRollButton()
+    {
+        AudioManager.instance.PlaySE(0);
+        SceneManager.LoadScene("StuffRoll");
     }
 
     // 1行目の右側のボタン（行を左に動かす）
@@ -36,6 +59,8 @@ public class OnClick : MonoBehaviour
     {
 
         if (!onClickFlag) return;
+
+        ButtonClick();
 
         colorNum[0].Add(Util.RandNum());
 
@@ -51,6 +76,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[1].Add(Util.RandNum());
 
         gameManager.TwoRow++;
@@ -64,6 +91,8 @@ public class OnClick : MonoBehaviour
     public void threeRowRightButton()
     {
         if (!onClickFlag) return;
+        
+        ButtonClick();
 
         colorNum[2].Add(Util.RandNum());
 
@@ -79,6 +108,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[3].Add(Util.RandNum());
 
         gameManager.FourRow++;
@@ -92,6 +123,8 @@ public class OnClick : MonoBehaviour
     public void fiveRowRightButton()
     {
         if (!onClickFlag) return;
+
+        ButtonClick();
 
         colorNum[4].Add(Util.RandNum());
 
@@ -107,6 +140,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[0].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
@@ -118,6 +153,8 @@ public class OnClick : MonoBehaviour
     public void twoRowLeftButton()
     {
         if (!onClickFlag) return;
+
+        ButtonClick();
 
         colorNum[1].Insert(0, Util.RandNum());
 
@@ -131,6 +168,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[2].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
@@ -143,6 +182,8 @@ public class OnClick : MonoBehaviour
     {
         if (!onClickFlag) return;
 
+        ButtonClick();
+
         colorNum[3].Insert(0, Util.RandNum());
 
         ChengePanelColor(colorNum);
@@ -154,6 +195,8 @@ public class OnClick : MonoBehaviour
     public void fiveRowLeftButton()
     {
         if (!onClickFlag) return;
+
+        ButtonClick();
 
         colorNum[4].Insert(0, Util.RandNum());
 
@@ -204,7 +247,10 @@ public class OnClick : MonoBehaviour
 
     }
 
-    
+    void ButtonClick()
+    {
+        AudioManager.instance.PlaySE(0);
+    }
 
     void lineCheck()
     {
@@ -266,6 +312,7 @@ public class OnClick : MonoBehaviour
     IEnumerator LineClear(List<List<int>> colorNum, 
                    int lineNum)
     {
+        AudioManager.instance.PlaySE(2);
 
         lineCheckManager.DelLine++;
 

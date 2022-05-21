@@ -9,6 +9,8 @@ public class TimerManager : MonoBehaviour
 
     float timeCount = 60.0f;
 
+    bool rankingViewFlag = false;
+
     public float TimeCount
     {
         get => timeCount;
@@ -27,6 +29,15 @@ public class TimerManager : MonoBehaviour
         if (timeCount <= 0)
         {
             timeCount = 0;
+
+            // ƒ‰ƒ“ƒLƒ“ƒO‚Ì•\Ž¦
+            if (!rankingViewFlag)
+            {
+                AudioManager.instance.PlaySE(3);
+                GameManager.instance.gameOverPanel.SetActive(true);
+                rankingViewFlag = true;
+                naichilab.RankingLoader.Instance.SendScoreAndShowRanking(GameManager.instance.scoreManager.ScorePoint);
+            }
         }
 
         timerText.text = timeCount.ToString("F0");

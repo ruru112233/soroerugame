@@ -1,0 +1,600 @@
+fileFormatVersion: 2
+guid: 0de594252fb5b384db9e6ee4656c944a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3498278556582667767
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_0"
+  - first:
+      213: -1725717106968096351
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_1"
+  - first:
+      213: -94486280833399088
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_2"
+  - first:
+      213: -5144865502411765257
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_3"
+  - first:
+      213: -1793558452752325216
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_4"
+  - first:
+      213: 1690555390133293693
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_5"
+  - first:
+      213: -3372038132545468010
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_6"
+  - first:
+      213: 7197676936397538362
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_7"
+  - first:
+      213: -6199929431872855426
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_8"
+  - first:
+      213: 8788395955143296816
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_9"
+  - first:
+      213: 5292111469405315613
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_10"
+  - first:
+      213: 3891396245804276444
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_11"
+  - first:
+      213: -1560524428277662390
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_12"
+  - first:
+      213: -9193151792634816784
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_13"
+  - first:
+      213: 5327959371172275361
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_14"
+  - first:
+      213: -1393257562198578813
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_15"
+  - first:
+      213: 5701490172680135283
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_16"
+  - first:
+      213: -4710011830039366074
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_17"
+  - first:
+      213: -4754007378803001953
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_18"
+  - first:
+      213: 5090647481692912890
+    second: "\u2014Pngtree\u2014a set of game ui_7392415_19"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_0"
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1180
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5e97200d16c8030800000000000000
+      internalID: 3498278556582667767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_1"
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 1180
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a11a583f650d08e0800000000000000
+      internalID: -1725717106968096351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_2"
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1180
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d607ca6a3150bef0800000000000000
+      internalID: -94486280833399088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_3"
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 1180
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9c59f8514c998b0800000000000000
+      internalID: -5144865502411765257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_4"
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 904
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a56cc307100c17e0800000000000000
+      internalID: -1793558452752325216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_5"
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 904
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d72540e9b2f067710800000000000000
+      internalID: 1690555390133293693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_6"
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 904
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6994e8c2f2d1431d0800000000000000
+      internalID: -3372038132545468010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_7"
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 904
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a344ff9e90943e360800000000000000
+      internalID: 7197676936397538362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_8"
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 628
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e72aab4c70d65f9a0800000000000000
+      internalID: -6199929431872855426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_9"
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 628
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037cbcbee87a6f970800000000000000
+      internalID: 8788395955143296816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_10"
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 628
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12aca5b75b517940800000000000000
+      internalID: 5292111469405315613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_11"
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 628
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdad37f9444010630800000000000000
+      internalID: 3891396245804276444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_12"
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 352
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4db03dec47e75ae0800000000000000
+      internalID: -1560524428277662390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_13"
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 352
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f691c9e62d5b6080800000000000000
+      internalID: -9193151792634816784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_14"
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 352
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4ef60c1d6b0f940800000000000000
+      internalID: 5327959371172275361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_15"
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 352
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389e68401a72aace0800000000000000
+      internalID: -1393257562198578813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_16"
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 76
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372eaf0ba13cf1f40800000000000000
+      internalID: 5701490172680135283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_17"
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 76
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646bd9ef13da2aeb0800000000000000
+      internalID: -4710011830039366074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_18"
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 76
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f957cde0a7f560eb0800000000000000
+      internalID: -4754007378803001953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014a set of game ui_7392415_19"
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 76
+        width: 276
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afcfa07c9ec95a640800000000000000
+      internalID: 5090647481692912890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
